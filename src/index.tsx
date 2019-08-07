@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './application/serviceWorker';
 
-import "./assets/vendor/nucleo/css/nucleo.css";
-import "./assets/vendor/font-awesome/css/font-awesome.min.css";
-import "./assets/scss/argon-design-system-react.scss";
-import './index.scss';
+import "./application/assets/vendor/nucleo/css/nucleo.css";
+import "./application/assets/vendor/font-awesome/css/font-awesome.min.css";
+import "./application/assets/scss/argon-design-system-react.scss";
+
+import App from './application/App';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 
