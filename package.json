@@ -20,9 +20,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test:coverage": "react-scripts test --coverage",
     "analyze": "source-map-explorer 'build/static/css/*.css' 'build/static/js/*.js'",
-    "analyze:build": "npm run build && npm run analyze"
+    "analyze:build": "npm run build && npm run analyze",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +38,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/application/**/*.{js,jsx,ts,tsx}",
+      "!src/application/serviceWorker.ts",
+      "src/domain/**/*.{js,jsx,ts,tsx}"
     ]
   }
 }

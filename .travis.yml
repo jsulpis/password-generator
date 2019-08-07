@@ -2,13 +2,21 @@ language: node_js
 node_js:
   - 8
 
+dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "jsulpis-github"
+    token: $SONAR_TOKEN
+
 cache:
   directories:
     - node_modules
 
 script:
+  - npm run test:coverage
+  - sonar-scanner
   - npm run build
-  - npm test
 
 branches:
   only:

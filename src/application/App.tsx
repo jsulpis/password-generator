@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Col, Container, Row} from "reactstrap";
+import "./App.scss"
 
 function App() {
     return (
