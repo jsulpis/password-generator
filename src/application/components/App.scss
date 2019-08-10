@@ -1,4 +1,17 @@
-.password {
+html, body, #root, main {
+  height: 100%;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+h2 {
+  background-color: white;
+  line-height: 80px;
+}
+
+.password-box {
   width: 500px;
   height: 60px;
   margin: auto;
@@ -6,4 +19,32 @@
   border-radius: 4px;
   text-align: center;
   line-height: 60px;
+  background-color: white;
+}
+
+#password {
+  cursor: pointer;
+}
+
+#copy-password {
+  position: absolute;
+  top: -9999px;
+}
+
+.alert {
+  width: fit-content;
+  margin: auto;
+
+  i {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}
+
+.alert--show {
+  opacity: 1;
+}
+
+.alert--hide {
+  opacity: 0;
 }

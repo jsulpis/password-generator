@@ -12,6 +12,10 @@ describe("App", () => {
     container = document.createElement("div");
     // container *must* be attached to document so events work correctly.
     document.body.appendChild(container);
+
+    act(() => {
+      render(<App/>, container);
+    });
   });
 
   afterEach(() => {
@@ -21,10 +25,6 @@ describe("App", () => {
   });
 
   it("generates a password with default options", () => {
-    act(() => {
-      render(<App/>, container);
-    });
-
     act(() => {
       document.getElementById("btn-submit")!.click();
     });
@@ -40,10 +40,6 @@ describe("App", () => {
 
   it("generates a password with the chosen options", () => {
     act(() => {
-      render(<App/>, container);
-    });
-
-    act(() => {
       // Leave only numbers
       clickOnButtonsWithId(UPPERCASES, LOWERCASES, SPECIAL_CHARACTERS, "btn-submit");
     });
@@ -56,10 +52,6 @@ describe("App", () => {
   });
 
   it("generates an empty password if all options are disabled and display a custom message", () => {
-    act(() => {
-      render(<App/>, container);
-    });
-
     act(() => {
       clickOnButtonsWithId(UPPERCASES, LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, "btn-submit");
     });
