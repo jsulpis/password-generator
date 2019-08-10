@@ -13,10 +13,10 @@ class LengthSlider extends React.Component<LengthSliderProps> {
   componentDidMount() {
     const sliderRef = this.refs.slider as HTMLElement;
     const sliderOptions = {
-      start: [8],
+      start: [this.props.value],
       connect: [true, false],
       step: 1,
-      range: {min: 1, max: 30}
+      range: {min: 4, max: 30}
     };
     const slider = Slider.create(sliderRef, sliderOptions);
     slider.on("update", this.updateValue);
@@ -35,7 +35,7 @@ class LengthSlider extends React.Component<LengthSliderProps> {
                         {Math.trunc(value)}
                     </span>
         </Col>
-        <Col xs={11}>
+        <Col xs={11} className="column-slider">
           <div className="slider" ref="slider"/>
         </Col>
       </Row>
