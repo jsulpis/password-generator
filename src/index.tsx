@@ -6,7 +6,7 @@ import "./application/assets/vendor/nucleo/css/nucleo.css";
 import "./application/assets/vendor/font-awesome/css/font-awesome.min.css";
 import "./application/assets/scss/argon-design-system-react.scss";
 
-import App from './application/App';
+import App from './application/components/App';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 
