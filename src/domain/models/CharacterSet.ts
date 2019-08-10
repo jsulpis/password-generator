@@ -1,3 +1,3 @@
-import {Criteria} from "./Criteria";
+import {OptionName} from "./OptionName";
 
-export type CharacterSet = { [key in keyof typeof Criteria]: string }
+export type CharacterSet = { [key in keyof typeof OptionName]: string }

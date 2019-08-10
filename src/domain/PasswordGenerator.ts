@@ -1,6 +1,6 @@
 import {GeneratorOptions} from "./models/GeneratorOptions";
 import {ALL_CHARACTERS} from "./characters";
-import {Criteria} from "./models/Criteria";
+import {OptionName} from "./models/OptionName";
 
 export default class PasswordGenerator {
 
@@ -37,9 +37,9 @@ export default class PasswordGenerator {
     private computeCharacterSet(options: GeneratorOptions) {
         // Get the keys of options whose value are true and return their corresponding Character set from ALL_CharacterS
         return Object.keys(options)
-            .map((key: any) => key as Criteria)
-            .filter((key: Criteria) => options[key])
-            .map((key: Criteria) => ALL_CHARACTERS[key])
+          .map((key: any) => key as OptionName)
+          .filter((key: OptionName) => options[key])
+          .map((key: OptionName) => ALL_CHARACTERS[key])
             .join(this.EMPTY_STRING);
     }
 
@@ -48,11 +48,11 @@ export default class PasswordGenerator {
     }
 
     private enforceAllCriterias(options: GeneratorOptions) {
-        const criterias: Criteria[] = Object.keys(options)
-            .map((key: any) => key as Criteria)
+      const criterias: OptionName[] = Object.keys(options)
+        .map((key: any) => key as OptionName)
             .filter(key => options[key]);
 
-        criterias.forEach((criteria: Criteria) => {
+      criterias.forEach((criteria: OptionName) => {
             const CharacterMatchingCriteria = this.pickRandomCharacterFromSet(ALL_CHARACTERS[criteria]);
             this.pushCharacterAtTheBeginningOfPassword(CharacterMatchingCriteria);
         })
