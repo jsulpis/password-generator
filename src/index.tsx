@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './application/serviceWorker';
 
-import "./application/assets/vendor/nucleo/css/nucleo.css";
-import "./application/assets/vendor/font-awesome/css/font-awesome.min.css";
 import "./application/assets/scss/argon-design-system-react.scss";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 import App from './application/components/App';
 

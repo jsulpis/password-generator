@@ -45,7 +45,7 @@ class App extends React.Component<any, AppState> {
               {password && <p className="text-center tip-message">{this.TIP_MESSAGE}</p>}
               <textarea id="copy-password" value={password} readOnly/>
               <Alert className={this.state.displaySuccessMessage ? 'alert--show' : 'alert--hide'} color="success">
-                <i className="ni ni-check-bold"/>{this.COPY_SUCCESS}
+                <i className="fas fa-check"/>{this.COPY_SUCCESS}
               </Alert>
             </Container>
           </section>

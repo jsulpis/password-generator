@@ -24,7 +24,7 @@ function SimpleFooter() {
                 color="default"
                 outline
                 id="tooltipWebsite">
-                <i className="ni ni-world-2"/>
+                <i className="fas fa-globe"/>
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipWebsite">
                 Website
@@ -35,7 +35,7 @@ function SimpleFooter() {
                 color="default"
                 outline
                 id="tooltipLinkedin">
-                <i className="fa fa-linkedin"/>
+                <i className="fab fa-linkedin-in"/>
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipLinkedin">
                 Get in touch
@@ -46,7 +46,7 @@ function SimpleFooter() {
                 color="default"
                 outline
                 id="tooltipGitHub">
-                <i className="fa fa-github"/>
+                <i className="fab fa-github"/>
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipGitHub">
                 Star on GitHub

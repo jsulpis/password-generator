@@ -1,0 +1,2 @@
+# Exclude vendor files from language statistics on GitHub
+/src/application/assets linguist-vendored
