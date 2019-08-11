@@ -4,6 +4,7 @@ import {GeneratorOptions} from "../../domain/models/GeneratorOptions";
 import PasswordGenerator from "../../domain/PasswordGenerator";
 import {Alert, Container} from "reactstrap";
 import "./App.scss";
+import SimpleFooter from "./organisms/SimpleFooter";
 
 interface AppState {
   password: string;
@@ -30,24 +31,27 @@ class App extends React.Component<any, AppState> {
                                   onClick={this.copyPasswordToClipboard}>{password}</span>;
     const messageElement = <span className="heading-3 password__message">{this.DEFAULT_MESSAGE}</span>;
     return (
-      <main className="bg-secondary">
-        <h2 className="text-center mt-5 display-3">Password Generator</h2>
-        <section>
-          <PasswordForm onSubmit={this.generatePassword}/>
-        </section>
-        <section>
-          <Container>
-            <div className="password-box">
-              {password ? passwordElement : messageElement}
-            </div>
-            {password && <p className="text-center">{this.TIP_MESSAGE}</p>}
-            <textarea id="copy-password" value={password} readOnly/>
-            <Alert className={this.state.displaySuccessMessage ? 'alert--show' : 'alert--hide'} color="success">
-              <i className="ni ni-check-bold"/>{this.COPY_SUCCESS}
-            </Alert>
-          </Container>
-        </section>
-      </main>
+      <>
+        <main className="bg-secondary">
+          <h2 className="text-center">Password Generator</h2>
+          <section>
+            <PasswordForm onSubmit={this.generatePassword}/>
+          </section>
+          <section>
+            <Container>
+              <div className="password-box">
+                {password ? passwordElement : messageElement}
+              </div>
+              {password && <p className="text-center tip-message">{this.TIP_MESSAGE}</p>}
+              <textarea id="copy-password" value={password} readOnly/>
+              <Alert className={this.state.displaySuccessMessage ? 'alert--show' : 'alert--hide'} color="success">
+                <i className="ni ni-check-bold"/>{this.COPY_SUCCESS}
+              </Alert>
+            </Container>
+          </section>
+        </main>
+        <SimpleFooter/>
+      </>
     );
   }
 
@@ -57,7 +61,7 @@ class App extends React.Component<any, AppState> {
   };
 
   private copyPasswordToClipboard = () => {
-    document.querySelector<any>("#copy-password")!.select();
+    document.querySelector<any>("#copy-password").select();
     document.execCommand('copy');
     this.setState({displaySuccessMessage: true});
     setTimeout(() => this.setState({displaySuccessMessage: false}), 2000);

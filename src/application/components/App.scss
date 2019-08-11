@@ -1,5 +1,8 @@
-html, body, #root, main {
-  height: 100%;
+@import "~bootstrap/functions";
+@import "~custom/variables";
+
+main {
+  min-height: calc(100vh - #{102px});
 }
 
 section {
@@ -7,15 +10,18 @@ section {
 }
 
 h2 {
-  background-color: white;
-  line-height: 80px;
+  line-height: 100px;
+  color: white;
+  font-size: 2.1875rem;
+  font-weight: 600;
+  background-image: linear-gradient(#{lighten($primary, 10%)}, $primary);
 }
 
 .password-box {
   width: 500px;
   height: 60px;
   margin: auto;
-  border: 2px solid #dee2e6;
+  border: 2px solid $gray-300;
   border-radius: 4px;
   text-align: center;
   line-height: 60px;
@@ -31,9 +37,14 @@ h2 {
   top: -9999px;
 }
 
+.tip-message {
+  margin-bottom: 0;
+}
+
 .alert {
   width: fit-content;
   margin: auto;
+  margin-top: 1rem;
 
   i {
     margin-right: 10px;
