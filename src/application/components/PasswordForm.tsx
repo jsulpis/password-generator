@@ -56,7 +56,7 @@ class PasswordForm extends React.Component<FormProps, FormState> {
                       onChange={(val) => this.onChangeOption(OptionName.specialCharacters, val)}/>
           </FormItem>
           <div className="text-center mt-4">
-            <Button color="primary" type="submit">
+            <Button id="btn-submit" color="primary" type="submit">
               Generate
             </Button>
           </div>

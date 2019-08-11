@@ -20,8 +20,8 @@ class App extends React.Component<any, AppState> {
 
   render() {
     const password = this.state.password;
-    const passwordElement = <span className="display-4">{password}</span>;
-    const messageElement = <span className="heading-3">{this.DEFAULT_MESSAGE}</span>;
+    const passwordElement = <span className="display-4 password__value">{password}</span>;
+    const messageElement = <span className="heading-3 password__message">{this.DEFAULT_MESSAGE}</span>;
     return (
       <main>
         <h2 className="text-center mt-5 display-3">Password Generator</h2>
@@ -42,7 +42,6 @@ class App extends React.Component<any, AppState> {
   private generatePassword = (length: number, options: GeneratorOptions) => {
     const password = new PasswordGenerator().generatePassword(length, options);
     this.setState({password});
-    console.log(length, options, password);
   }
 }
 

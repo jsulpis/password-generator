@@ -27,8 +27,7 @@ describe("CheckBox", () => {
     });
 
     act(() => {
-      // @ts-ignore
-      document.getElementById("test").click();
+      document.getElementById("test")!.click();
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
