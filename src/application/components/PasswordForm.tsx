@@ -1,7 +1,7 @@
 import React from "react";
 import LengthSlider from "./atoms/LengthSlider";
 import {Button, Container} from "reactstrap";
-import FormItem from "./FormItem";
+import FormItem from "./organisms/FormItem";
 import CheckBox from "./atoms/CheckBox";
 import {LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, UPPERCASES} from "../../domain/characters";
 import {OptionName} from "../../domain/models/OptionName";
@@ -29,6 +29,11 @@ class PasswordForm extends React.Component<FormProps, FormState> {
         specialCharacters: true
       }
     }
+  }
+
+  componentDidMount(): void {
+    const {length, options} = this.state;
+    this.props.onSubmit(length, options);
   }
 
   render() {

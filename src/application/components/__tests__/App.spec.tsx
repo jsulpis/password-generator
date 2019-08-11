@@ -59,6 +59,17 @@ describe("App", () => {
     expect(document.querySelector(".password__value")).toBeFalsy();
     expect(document.querySelector(".password__message")!.textContent).toBeTruthy();
   });
+
+  it("copies a password to the clipboard", () => {
+    document.execCommand = jest.fn();
+
+    act(() => {
+      document.getElementById("btn-submit")!.click();
+      document.querySelector<any>(".password__value").click();
+    });
+
+    expect(document.execCommand).toHaveBeenCalledWith("copy");
+  })
 });
 
 function clickOnButtonsWithId(...ids: string[]) {
