@@ -4,4 +4,15 @@ footer {
   .social-media {
     text-align: end;
   }
+
+  .nav-footer li {
+    margin: auto
+  }
+
+  @media (max-width: 767px) {
+    .footer-col {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
 }

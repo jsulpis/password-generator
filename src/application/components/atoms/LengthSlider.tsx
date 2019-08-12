@@ -35,7 +35,7 @@ class LengthSlider extends React.Component<LengthSliderProps> {
                         {Math.trunc(value)}
                     </span>
         </Col>
-        <Col xs={11} className="column-slider">
+        <Col className="column-slider">
           <div className="slider" ref="slider"/>
         </Col>
       </Row>

@@ -9,10 +9,10 @@ export interface FormItemProps {
 
 function FormItem(props: FormItemProps) {
   return (
-    <Row className="mt-2 form-item">
-      <Col xs={5} className={"option-name__container"}>
-        <p className="option-name__value">{props.name}:</p></Col>
-      <Col>{props.children}</Col>
+    <Row className="mt-3 form-item">
+      <Col xs={12} sm={5} className={"option-name__container"}>
+        <span className="option-name__value">{props.name}:</span></Col>
+      <Col xs={12} sm={7}>{props.children}</Col>
     </Row>
   )
 }

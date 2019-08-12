@@ -15,7 +15,7 @@ class App extends React.Component<any, AppState> {
 
   readonly DEFAULT_MESSAGE = "Choose some options above and click on Generate!";
   readonly TIP_MESSAGE = "Tip: click on your password to copy it to the clipboard !";
-  readonly COPY_SUCCESS = "Your password has been copied to the clipboard.";
+  readonly COPY_SUCCESS = "Password copied to the clipboard.";
 
   constructor(props) {
     super(props);
@@ -27,7 +27,7 @@ class App extends React.Component<any, AppState> {
 
   render() {
     const password = this.state.password;
-    const passwordElement = <span id="password" className="display-4 password__value"
+    const passwordElement = <span id="password" className="password__value"
                                   onClick={this.copyPasswordToClipboard}>{password}</span>;
     const messageElement = <span className="heading-3 password__message">{this.DEFAULT_MESSAGE}</span>;
     return (

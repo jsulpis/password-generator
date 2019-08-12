@@ -5,10 +5,10 @@ import "./SimpleFooter.scss";
 function SimpleFooter() {
   return (
     <>
-      <footer className="">
+      <footer>
         <Container>
-          <Row className=" align-items-center justify-content-md-between">
-            <Col md="3">
+          <Row className="align-items-center justify-content-md-between">
+            <Col md="4" className="footer-col copyright">
               <div className=" copyright">
                 © {new Date().getFullYear()}{" "}
                 <a href="https://www.juliensulpis.fr?ref=footer-link">
@@ -17,7 +17,7 @@ function SimpleFooter() {
                 .
               </div>
             </Col>
-            <Col md="7" className="social-media">
+            <Col md="5" className="social-media footer-col">
               <Button
                 className="rounded-circle btn-icon-only"
                 href="https://www.juliensulpis.fr?ref=footer-link"
@@ -52,8 +52,8 @@ function SimpleFooter() {
                 Star on GitHub
               </UncontrolledTooltip>
             </Col>
-            <Col md="2">
-              <Nav className=" nav-footer justify-content-end">
+            <Col md="3" lg="2" className="footer-col">
+              <Nav className="nav-footer">
                 <NavItem>
                   <NavLink
                     href="https://github.com/jsulpis/password-generator/blob/master/LICENSE">
