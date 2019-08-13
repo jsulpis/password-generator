@@ -31,9 +31,9 @@ class LengthSlider extends React.Component<LengthSliderProps> {
     return (
       <Row className="input-slider-container">
         <Col xs={1} className="column-value">
-                    <span className="value">
-                        {Math.trunc(value)}
-                    </span>
+          <span className="value" id={"slider-value"}>
+              {Math.trunc(value)}
+          </span>
         </Col>
         <Col className="column-slider">
           <div className="slider" ref="slider"/>
