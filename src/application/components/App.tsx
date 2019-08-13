@@ -5,6 +5,7 @@ import PasswordGenerator from "../../domain/PasswordGenerator";
 import {Alert, Container} from "reactstrap";
 import "./App.scss";
 import SimpleFooter from "./organisms/SimpleFooter";
+import PasswordStrengthIndicator from "./organisms/PasswordStrengthIndicator";
 
 interface AppState {
   password: string;
@@ -22,7 +23,7 @@ class App extends React.Component<any, AppState> {
     this.state = {
       password: "",
       displaySuccessMessage: false
-    };
+    }
   }
 
   render() {
@@ -44,6 +45,7 @@ class App extends React.Component<any, AppState> {
               </div>
               {password && <p className="text-center tip-message">{this.TIP_MESSAGE}</p>}
               <textarea id="copy-password" value={password} readOnly/>
+              {password && <PasswordStrengthIndicator password={password}/>}
               <Alert className={this.state.displaySuccessMessage ? 'alert--show' : 'alert--hide'} color="success">
                 <i className="fas fa-check"/>{this.COPY_SUCCESS}
               </Alert>

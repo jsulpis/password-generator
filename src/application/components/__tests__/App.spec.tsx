@@ -69,6 +69,17 @@ describe("App", () => {
     });
 
     expect(document.execCommand).toHaveBeenCalledWith("copy");
+  });
+
+  it("should display the strength indicator if a password is present", () => {
+    expect(document.querySelector(".strength-indicator")).toBeTruthy();
+  });
+
+  it("should not display the strength indicator if no password", () => {
+    act(() => {
+      clickOnButtonsWithId(UPPERCASES, LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, "btn-submit");
+    });
+    expect(document.querySelector(".strength-indicator")).toBeFalsy();
   })
 });
 
