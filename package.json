@@ -2,6 +2,17 @@
   "name": "password-generator",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "tslint src/**/*.ts",
+    "lint:fix": "tslint src/**/*.ts --fix",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "analyze": "source-map-explorer 'build/static/css/*.css' 'build/static/js/*.js'",
+    "analyze:build": "npm run build && npm run analyze",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
     "@types/jest": "24.0.17",
@@ -19,14 +30,13 @@
     "source-map-explorer": "^2.0.1",
     "typescript": "3.5.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage --watchAll=false",
-    "analyze": "source-map-explorer 'build/static/css/*.css' 'build/static/js/*.js'",
-    "analyze:build": "npm run build && npm run analyze",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "husky": "^3.0.3",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +58,17 @@
       "src/application/**/*.{js,jsx,ts,tsx}",
       "!src/application/serviceWorker.ts",
       "src/domain/**/*.{js,jsx,ts,tsx}"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "tslint --fix",
+      "git add"
     ]
   }
 }
