@@ -61,15 +61,7 @@ describe("App", () => {
   });
 
   it("generates an empty password if all options are disabled and display a custom message", () => {
-    act(() => {
-      clickOnButtonsWithId(
-        UPPERCASES,
-        LOWERCASES,
-        NUMBERS,
-        SPECIAL_CHARACTERS,
-        "btn-submit"
-      );
-    });
+    act(() => disableAllOptionsAndSubmit());
 
     expect(document.querySelector(".password__value")).toBeFalsy();
     expect(
@@ -93,19 +85,20 @@ describe("App", () => {
   });
 
   it("should not display the strength indicator if no password", () => {
-    act(() => {
-      clickOnButtonsWithId(
-        UPPERCASES,
-        LOWERCASES,
-        NUMBERS,
-        SPECIAL_CHARACTERS,
-        "btn-submit"
-      );
-    });
+    act(() => disableAllOptionsAndSubmit());
     expect(document.querySelector(".strength-indicator")).toBeFalsy();
   });
 });
 
 function clickOnButtonsWithId(...ids: string[]) {
   ids.forEach(id => document.getElementById(id)!.click());
+}
+function disableAllOptionsAndSubmit() {
+  clickOnButtonsWithId(
+    UPPERCASES,
+    LOWERCASES,
+    NUMBERS,
+    SPECIAL_CHARACTERS,
+    "btn-submit"
+  );
 }
