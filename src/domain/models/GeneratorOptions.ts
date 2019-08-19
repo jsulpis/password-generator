@@ -1,3 +1,5 @@
-import {OptionName} from "./OptionName";
+import { OptionName } from "./OptionName";
 
-export type GeneratorOptions = Partial<{ [key in keyof typeof OptionName]: boolean }>
+export type GeneratorOptions = Partial<
+  { [key in keyof typeof OptionName]: boolean }
+>;

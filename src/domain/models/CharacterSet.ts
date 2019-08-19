@@ -1,3 +1,3 @@
-import {OptionName} from "./OptionName";
+import { OptionName } from "./OptionName";
 
-export type CharacterSet = { [key in keyof typeof OptionName]: string }
+export type CharacterSet = { [key in keyof typeof OptionName]: string };
