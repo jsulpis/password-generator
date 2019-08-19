@@ -1,5 +1,14 @@
 import React from "react";
-import {Button, Col, Container, Nav, NavItem, NavLink, Row, UncontrolledTooltip} from "reactstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Nav,
+  NavItem,
+  NavLink,
+  Row,
+  UncontrolledTooltip
+} from "reactstrap";
 import "./SimpleFooter.scss";
 
 function SimpleFooter() {
@@ -23,8 +32,9 @@ function SimpleFooter() {
                 href="https://www.juliensulpis.fr?ref=footer-link"
                 color="default"
                 outline
-                id="tooltipWebsite">
-                <i className="fas fa-globe"/>
+                id="tooltipWebsite"
+              >
+                <i className="fas fa-globe" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipWebsite">
                 Website
@@ -34,8 +44,9 @@ function SimpleFooter() {
                 href="https://www.linkedin.com/in/julien-sulpis/"
                 color="default"
                 outline
-                id="tooltipLinkedin">
-                <i className="fab fa-linkedin-in"/>
+                id="tooltipLinkedin"
+              >
+                <i className="fab fa-linkedin-in" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipLinkedin">
                 Get in touch
@@ -45,8 +56,9 @@ function SimpleFooter() {
                 href="https://github.com/jsulpis/password-generator"
                 color="default"
                 outline
-                id="tooltipGitHub">
-                <i className="fab fa-github"/>
+                id="tooltipGitHub"
+              >
+                <i className="fab fa-github" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipGitHub">
                 Star on GitHub
@@ -55,8 +67,7 @@ function SimpleFooter() {
             <Col md="3" lg="2" className="footer-col">
               <Nav className="nav-footer">
                 <NavItem>
-                  <NavLink
-                    href="https://github.com/jsulpis/password-generator/blob/master/LICENSE">
+                  <NavLink href="https://github.com/jsulpis/password-generator/blob/master/LICENSE">
                     MIT License
                   </NavLink>
                 </NavItem>
@@ -66,8 +77,7 @@ function SimpleFooter() {
         </Container>
       </footer>
     </>
-  )
+  );
 }
-
 
 export default SimpleFooter;

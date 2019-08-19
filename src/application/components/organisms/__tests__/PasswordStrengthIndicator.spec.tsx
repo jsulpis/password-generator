@@ -1,10 +1,9 @@
-import React from 'react';
-import {render, unmountComponentAtNode} from "react-dom";
-import {act} from "react-dom/test-utils";
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
 import PasswordStrengthIndicator from "../PasswordStrengthIndicator";
 
 describe("PasswordStrengthIndicator", () => {
-
   let container: HTMLElement;
   beforeEach(() => {
     // setup a DOM element as a render target
@@ -21,9 +20,11 @@ describe("PasswordStrengthIndicator", () => {
 
   function verifyPasswordLabel(password: string, expectedLabel: string) {
     act(() => {
-      render(<PasswordStrengthIndicator password={password}/>, container);
+      render(<PasswordStrengthIndicator password={password} />, container);
     });
-    expect(document.querySelector(".strength-label")!.textContent).toBe(expectedLabel);
+    expect(document.querySelector(".strength-label")!.textContent).toBe(
+      expectedLabel
+    );
   }
 
   it("handles very weak passwords", () => {

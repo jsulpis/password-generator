@@ -1,11 +1,15 @@
-import React from 'react';
-import {render, unmountComponentAtNode} from "react-dom";
-import {act} from "react-dom/test-utils";
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
 import App from "../App";
-import {LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, UPPERCASES} from "../../../domain/characters";
+import {
+  LOWERCASES,
+  NUMBERS,
+  SPECIAL_CHARACTERS,
+  UPPERCASES
+} from "../../../domain/characters";
 
 describe("App", () => {
-
   let container: HTMLElement;
   beforeEach(() => {
     // setup a DOM element as a render target
@@ -14,7 +18,7 @@ describe("App", () => {
     document.body.appendChild(container);
 
     act(() => {
-      render(<App/>, container);
+      render(<App />, container);
     });
   });
 
@@ -41,7 +45,12 @@ describe("App", () => {
   it("generates a password with the chosen options", () => {
     act(() => {
       // Leave only numbers
-      clickOnButtonsWithId(UPPERCASES, LOWERCASES, SPECIAL_CHARACTERS, "btn-submit");
+      clickOnButtonsWithId(
+        UPPERCASES,
+        LOWERCASES,
+        SPECIAL_CHARACTERS,
+        "btn-submit"
+      );
     });
 
     const password = document.querySelector(".password__value")!.textContent;
@@ -53,11 +62,19 @@ describe("App", () => {
 
   it("generates an empty password if all options are disabled and display a custom message", () => {
     act(() => {
-      clickOnButtonsWithId(UPPERCASES, LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, "btn-submit");
+      clickOnButtonsWithId(
+        UPPERCASES,
+        LOWERCASES,
+        NUMBERS,
+        SPECIAL_CHARACTERS,
+        "btn-submit"
+      );
     });
 
     expect(document.querySelector(".password__value")).toBeFalsy();
-    expect(document.querySelector(".password__message")!.textContent).toBeTruthy();
+    expect(
+      document.querySelector(".password__message")!.textContent
+    ).toBeTruthy();
   });
 
   it("copies a password to the clipboard", () => {
@@ -77,10 +94,16 @@ describe("App", () => {
 
   it("should not display the strength indicator if no password", () => {
     act(() => {
-      clickOnButtonsWithId(UPPERCASES, LOWERCASES, NUMBERS, SPECIAL_CHARACTERS, "btn-submit");
+      clickOnButtonsWithId(
+        UPPERCASES,
+        LOWERCASES,
+        NUMBERS,
+        SPECIAL_CHARACTERS,
+        "btn-submit"
+      );
     });
     expect(document.querySelector(".strength-indicator")).toBeFalsy();
-  })
+  });
 });
 
 function clickOnButtonsWithId(...ids: string[]) {

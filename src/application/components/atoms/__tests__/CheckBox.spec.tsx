@@ -1,10 +1,9 @@
-import React from 'react';
-import {render, unmountComponentAtNode} from "react-dom";
-import {act} from "react-dom/test-utils";
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
 import CheckBox from "../CheckBox";
 
 describe("CheckBox", () => {
-
   let container: HTMLElement;
   beforeEach(() => {
     // setup a DOM element as a render target
@@ -20,10 +19,12 @@ describe("CheckBox", () => {
   });
 
   it("changes value when clicked", () => {
-    const onChange = jest.fn(() => {
-    });
+    const onChange = jest.fn(() => {});
     act(() => {
-      render(<CheckBox value={false} label="test" onChange={onChange}/>, container);
+      render(
+        <CheckBox value={false} label="test" onChange={onChange} />,
+        container
+      );
     });
 
     act(() => {

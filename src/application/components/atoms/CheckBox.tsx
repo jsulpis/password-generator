@@ -7,8 +7,7 @@ interface CheckBoxProps {
 }
 
 class CheckBox extends React.Component<CheckBoxProps> {
-
-  render() {
+  public render() {
     const checked = !!this.props.value;
     const label = this.props.label;
 
@@ -25,12 +24,12 @@ class CheckBox extends React.Component<CheckBoxProps> {
           <span>{label}</span>
         </label>
       </div>
-    )
+    );
   }
 
-  onValueChange = event => {
+  public onValueChange = event => {
     this.props.onChange(event.target.checked);
-  }
+  };
 }
 
 export default CheckBox;
