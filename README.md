@@ -1,3 +1,23 @@
+<h1 align="center">Password Generator</h1>
+
+<h3 align="center">A plain old password generator with a strength indicator.</h3>
+
+<p align="center">
+	<a href="https://travis-ci.org/jsulpis/password-generator">
+		<img alt="Build Status" src="https://travis-ci.org/jsulpis/password-generator.svg?branch=master" />
+	</a>
+  <a href="https://sonarcloud.io/dashboard?id=password-generator">
+		<img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=password-generator&metric=alert_status" />
+	</a>
+  <a href="https://sonarcloud.io/dashboard?id=password-generator">
+		<img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=password-generator&metric=coverage" />
+	</a>
+</p>
+
+<p align="center">
+  <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/password-generator/master/preview.png" alt="Screenshot image"/>
+</p>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -42,3 +62,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## License
+
+Released under the [MIT](https://github.com/jsulpis/password-generator/blob/master/LICENSE) license.
