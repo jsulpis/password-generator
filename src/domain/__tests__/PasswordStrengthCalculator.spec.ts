@@ -1,5 +1,5 @@
-import {PasswordStrengthCalculator} from "../PasswordStrengthCalculator";
-import {PasswordStrength} from "../models/PasswordStrength";
+import { PasswordStrengthCalculator } from "../PasswordStrengthCalculator";
+import { PasswordStrength } from "../models/PasswordStrength";
 
 describe("PasswordStrengthCalculator", () => {
   const calculator = new PasswordStrengthCalculator();
@@ -28,7 +28,11 @@ describe("PasswordStrengthCalculator", () => {
     assertPasswordIsVeryStrong(")7eUmRz{)Y");
   });
 
-  function assertPasswordStrengthIsBetweenAnd(password: string, min: number, max: number) {
+  function assertPasswordStrengthIsBetweenAnd(
+    password: string,
+    min: number,
+    max: number
+  ) {
     const passwordStrength = calculator.calculateStrength(password).value;
     expect(passwordStrength).toBeGreaterThanOrEqual(min);
     expect(passwordStrength).toBeLessThan(max);
@@ -36,39 +40,52 @@ describe("PasswordStrengthCalculator", () => {
 
   function assertPasswordIsVeryWeak(password: string) {
     expect(calculator.calculateStrength(password).strength).toBe(
-      PasswordStrength.VERY_WEAK);
-    assertPasswordStrengthIsBetweenAnd(password,
+      PasswordStrength.VERY_WEAK
+    );
+    assertPasswordStrengthIsBetweenAnd(
+      password,
       PasswordStrength.VERY_WEAK,
-      PasswordStrength.WEAK);
+      PasswordStrength.WEAK
+    );
   }
 
   function assertPasswordIsWeak(password: string) {
     expect(calculator.calculateStrength(password).strength).toBe(
-      PasswordStrength.WEAK);
-    assertPasswordStrengthIsBetweenAnd(password,
+      PasswordStrength.WEAK
+    );
+    assertPasswordStrengthIsBetweenAnd(
+      password,
       PasswordStrength.WEAK,
-      PasswordStrength.GOOD);
+      PasswordStrength.GOOD
+    );
   }
 
   function assertPasswordIsGood(password: string) {
     expect(calculator.calculateStrength(password).strength).toBe(
-      PasswordStrength.GOOD);
-    assertPasswordStrengthIsBetweenAnd(password,
+      PasswordStrength.GOOD
+    );
+    assertPasswordStrengthIsBetweenAnd(
+      password,
       PasswordStrength.GOOD,
-      PasswordStrength.STRONG);
+      PasswordStrength.STRONG
+    );
   }
 
   function assertPasswordIsStrong(password: string) {
     expect(calculator.calculateStrength(password).strength).toBe(
-      PasswordStrength.STRONG);
-    assertPasswordStrengthIsBetweenAnd(password,
+      PasswordStrength.STRONG
+    );
+    assertPasswordStrengthIsBetweenAnd(
+      password,
       PasswordStrength.STRONG,
-      PasswordStrength.VERY_STRONG);
+      PasswordStrength.VERY_STRONG
+    );
   }
 
   function assertPasswordIsVeryStrong(password: string) {
     expect(calculator.calculateStrength(password).strength).toBe(
-      PasswordStrength.VERY_STRONG);
+      PasswordStrength.VERY_STRONG
+    );
     expect(calculator.calculateStrength(password).value).toBeGreaterThanOrEqual(
       PasswordStrength.VERY_STRONG
     );
