@@ -23,7 +23,6 @@ function SimpleFooter() {
                 <a href="https://www.juliensulpis.fr?ref=footer-link">
                   Julien Sulpis
                 </a>
-                .
               </div>
             </Col>
             <Col md="5" className="social-media footer-col">
@@ -38,18 +37,6 @@ function SimpleFooter() {
               </Button>
               <UncontrolledTooltip delay={0} target="tooltipWebsite">
                 Website
-              </UncontrolledTooltip>
-              <Button
-                className="rounded-circle btn-icon-only btn-3 ml-1"
-                href="https://www.linkedin.com/in/julien-sulpis/"
-                color="default"
-                outline
-                id="tooltipLinkedin"
-              >
-                <i className="fab fa-linkedin-in" />
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltipLinkedin">
-                Get in touch
               </UncontrolledTooltip>
               <Button
                 className="rounded-circle btn-icon-only btn-3 ml-1"
